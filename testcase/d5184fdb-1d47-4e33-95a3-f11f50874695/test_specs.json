@@ -1,0 +1,13 @@
+{
+  "name": "Security - API Key Validation in Config",
+  "description": "Ensures Config._validate_api_keys raises ValueError if required API keys are missing for the selected provider.",
+  "test_type": "security",
+  "input": "Config with MODEL_PROVIDER set to 'openai' and OPENAI_API_KEY missing.",
+  "output": "ValueError raised indicating missing API key.",
+  "success_criteria": [
+    "ValueError is raised with appropriate error message"
+  ],
+  "error_scenarios": [
+    "API key validation does not raise error when key is missing"
+  ]
+}
