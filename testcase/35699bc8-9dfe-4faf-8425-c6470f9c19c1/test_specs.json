@@ -1,0 +1,15 @@
+{
+  "name": "Security - Content Safety Enforcement on Agent Output",
+  "description": "Validates that sanitize_llm_output and with_content_safety decorator enforce content safety on agent outputs.",
+  "test_type": "security",
+  "input": "Agent output containing potentially unsafe content (e.g., toxic text or credentials).",
+  "output": "Sanitized output with unsafe content removed or flagged.",
+  "success_criteria": [
+    "Unsafe content is removed or flagged",
+    "Output complies with GUARDRAILS_CONFIG settings"
+  ],
+  "error_scenarios": [
+    "Unsafe content is not sanitized",
+    "Content safety enforcement fails"
+  ]
+}
