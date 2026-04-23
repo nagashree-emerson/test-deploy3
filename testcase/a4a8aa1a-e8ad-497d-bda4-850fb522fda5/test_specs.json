@@ -1,0 +1,13 @@
+{
+  "name": "Performance - BlobStorageService Upload/Download Latency",
+  "description": "Measures latency for BlobStorageService.upload and BlobStorageService.download methods.",
+  "test_type": "performance",
+  "input": "Blob path and data for upload; blob path and file_type for download.",
+  "output": "Measured latency for each operation.",
+  "success_criteria": [
+    "Upload and download complete within acceptable latency (e.g., < 500ms for mock data)"
+  ],
+  "error_scenarios": [
+    "Upload or download exceeds latency threshold"
+  ]
+}
