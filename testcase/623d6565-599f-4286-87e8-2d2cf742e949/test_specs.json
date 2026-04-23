@@ -1,0 +1,15 @@
+{
+  "name": "Integration - Parallel Process Orchestration",
+  "description": "Validates that RFQAgent.run orchestrates Process1Service and Process2Service in parallel and aggregates their results.",
+  "test_type": "integration",
+  "input": "Input payload with rfq_json containing contact_email and line_items with multiple bu_category values.",
+  "output": "Aggregated results from both processes in final_json.",
+  "success_criteria": [
+    "process1 and process2 results are present in final_json",
+    "process1_result['status'] == 'success'",
+    "process2_result['status'] == 'success'"
+  ],
+  "error_scenarios": [
+    "Process1 or Process2 returns escalated status"
+  ]
+}
