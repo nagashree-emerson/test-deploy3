@@ -1,0 +1,15 @@
+{
+  "name": "Functional - Resume Agent Run with Valid IDs",
+  "description": "Validates that RFQAgent.resume correctly resumes processing when provided with valid agent_run_id and pipeline_run_id.",
+  "test_type": "functional",
+  "input": "Valid agent_run_id and pipeline_run_id referencing an existing parent output.",
+  "output": "A dict with success=True and data fields as in a normal run.",
+  "success_criteria": [
+    "response['success'] is True",
+    "response['data']['agent_run_id'] == input agent_run_id",
+    "response['data']['output_blob_path'] is not None"
+  ],
+  "error_scenarios": [
+    "Parent output_ref not found for restart"
+  ]
+}
