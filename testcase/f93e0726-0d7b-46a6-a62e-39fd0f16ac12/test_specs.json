@@ -1,0 +1,14 @@
+{
+  "name": "Performance - Parallel Process Execution Speed",
+  "description": "Measures the time taken for asyncio.gather to complete Process1Service and Process2Service execution.",
+  "test_type": "performance",
+  "input": "Input payload with rfq_json containing contact_email and line_items.",
+  "output": "Execution time for parallel process completion.",
+  "success_criteria": [
+    "Parallel processes complete faster than sequential execution",
+    "Total time is less than sum of individual process times"
+  ],
+  "error_scenarios": [
+    "Parallel execution does not improve speed"
+  ]
+}
