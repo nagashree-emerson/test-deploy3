@@ -1,0 +1,13 @@
+{
+  "name": "Performance - Agent Run Throughput",
+  "description": "Measures the time taken for RFQAgent.run to process a typical input payload.",
+  "test_type": "performance",
+  "input": "A dict with valid pipeline_run_id and rfq_json with all required fields.",
+  "output": "Execution time in seconds.",
+  "success_criteria": [
+    "Agent run completes within acceptable threshold (e.g., < 2 seconds for mock data)"
+  ],
+  "error_scenarios": [
+    "Agent run exceeds performance threshold"
+  ]
+}
