@@ -1,0 +1,17 @@
+{
+  "name": "Functional - Successful Agent Run with Complete Input",
+  "description": "Validates that RFQAgent.run processes a complete input payload and returns a successful response with all required fields.",
+  "test_type": "functional",
+  "input": "A dict with valid pipeline_run_id, rfq_json containing contact_email, line_items with bu_category, and email_subject.",
+  "output": "A dict with success=True, agent_run_id, crm_quote_number, output_blob_path, and final_json.",
+  "success_criteria": [
+    "response['success'] is True",
+    "response['data']['agent_run_id'] is not None",
+    "response['data']['crm_quote_number'] is not None",
+    "response['data']['output_blob_path'] is not None",
+    "response['data']['final_json'] contains mapped CRM fields"
+  ],
+  "error_scenarios": [
+    "None expected for valid input"
+  ]
+}
