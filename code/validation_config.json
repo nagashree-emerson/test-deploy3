@@ -1,0 +1,5 @@
+{
+  "agent_run_id": "string",
+  "pipeline_run_id": "string",
+  "rfq_json": "string"
+}
