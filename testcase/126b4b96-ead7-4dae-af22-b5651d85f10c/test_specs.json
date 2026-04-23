@@ -1,0 +1,14 @@
+{
+  "name": "Integration - Resume Endpoint with Missing IDs",
+  "description": "Tests FastAPI /resume endpoint with missing agent_run_id or pipeline_run_id, expecting proper error handling.",
+  "test_type": "integration",
+  "input": "POST request to /resume with RFQAgentRequest missing agent_run_id or pipeline_run_id.",
+  "output": "RFQAgentResponse with success=False and error_code='RESTART_FAILED'.",
+  "success_criteria": [
+    "response['success'] is False",
+    "response['error_code'] == 'RESTART_FAILED'"
+  ],
+  "error_scenarios": [
+    "Missing required fields"
+  ]
+}
