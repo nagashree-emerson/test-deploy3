@@ -1,0 +1,15 @@
+{
+  "name": "Security - Exception Handler Content Safety",
+  "description": "Validates that FastAPI exception handlers (validation_exception_handler and pydantic_validation_exception_handler) sanitize error responses.",
+  "test_type": "security",
+  "input": "Malformed JSON request to /run or /resume endpoint.",
+  "output": "Sanitized error response with no unsafe content.",
+  "success_criteria": [
+    "Error response contains only safe, user-friendly messages",
+    "No unsafe or sensitive information is leaked"
+  ],
+  "error_scenarios": [
+    "Error response contains unsafe content",
+    "Sensitive information is exposed"
+  ]
+}
