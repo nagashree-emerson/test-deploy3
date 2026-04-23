@@ -1,0 +1,16 @@
+{
+  "name": "Functional - HITL Escalation for Missing Contact Email",
+  "description": "Validates that RFQAgent.run escalates to HITL when contact_email is missing in rfq_json.",
+  "test_type": "functional",
+  "input": "A dict with valid pipeline_run_id and rfq_json missing contact_email but containing line_items with bu_category.",
+  "output": "A dict with success=False, error_code='MISSING_CONTACT_EMAIL', and escalation details.",
+  "success_criteria": [
+    "response['success'] is False",
+    "response['error_code'] == 'MISSING_CONTACT_EMAIL'",
+    "response['escalation'] is not None",
+    "response['escalation']['process1']['hitl_task_id'] is not None"
+  ],
+  "error_scenarios": [
+    "None expected for this scenario"
+  ]
+}
