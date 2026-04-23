@@ -1,0 +1,17 @@
+{
+  "name": "Integration - /run Endpoint End-to-End",
+  "description": "Tests FastAPI /run endpoint with a valid RFQAgentRequest, ensuring full agent workflow and response model compliance.",
+  "test_type": "integration",
+  "input": "POST request to /run with RFQAgentRequest containing pipeline_run_id and rfq_json with required fields.",
+  "output": "RFQAgentResponse with success=True and populated data.",
+  "success_criteria": [
+    "HTTP status code is 200",
+    "response['success'] is True",
+    "response matches RFQAgentResponse schema"
+  ],
+  "error_scenarios": [
+    "Malformed JSON or invalid request",
+    "Audit entry creation failure",
+    "Missing RFQ JSON"
+  ]
+}
